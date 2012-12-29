@@ -1,0 +1,39 @@
+lxc-startup-scripts - a set of scripts to start / stop LXC containers
+
+DESCRIPTION
+
+create-bridge.sh
+	Creates a bridge interface and starts parprouted daemon
+
+create-lxc-container.sh
+	Generates a config and fstab file for the LXC container
+
+destroy-bridge.sh
+	Deletes the bridge and kills parprouted daemon
+
+destroy-lxc-container.sh
+	Deletes config files for a container
+
+mark-root-mount-rprivate.sh
+	Marks mounts private to fix the error:
+	"Invalid argument - pivot_root syscall failed"
+
+start-lxc-containers.sh
+	Starts up all LXC containers defined in the config file
+
+stop-lxc-containers.sh
+	Shuts down all LXC containers
+
+REQUIREMENTS
+
+lxc
+bridge-utils
+parprouted 
+	I use it to easily bridge veth devices with wlan,
+	though it would be possible to use ebtables or something,
+	and for a wired network you can do this w/ bridge-utils
+
+TODO
+
+This is just a quick hack to create and start up multiple LXC containers,
+does exactly what I need from it and is not likely to be developed further.
