@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#BASE_PATH=$(pwd)
-BASE_PATH="/home/rustam/Scripts/lxc/lxc-scripts"
+THIS_PATH=$(dirname $0)
+. ${THIS_PATH}/lxc-scripts.config
+
 CFGS_PATH="${BASE_PATH}/configs"
 
 if [ "$1" = "" ]
